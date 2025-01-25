@@ -1,34 +1,148 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { FaEnvelope, FaLock } from 'react-icons/fa';
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
+ const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    phoneNumber: '',
+    email: '',
+    motpass1:'',
+    motpass2:'',
+  });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Process form data
+  alert(" ok message sind")
+    // Reset form data after submit (optional)
+    setFormData({
+      firstName: '',
+      lastName: '',
+      phoneNumber: '',
+      email: '',
+      motpass1:'',
+      motpass2:'',
+    });
+  };
+
 
   return (
-    <>
+    <div className='center-div'>
+  <form onSubmit={handleSubmit}>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+
+        <input className="input"
+          type="text"
+          id="firstName"
+          name="firstName"
+          value={formData.firstName}
+          onChange={handleChange}
+          placeholder="Enter your first name"
+  
+          required
+       
+        />
+       
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+
+      <div>
+       
+        <input
+        className="input"
+          type="text"
+          id="lastName"
+          name="lastName"
+          value={formData.lastName}
+          onChange={handleChange}
+          required
+          placeholder="Enter your Last Name" 
+  
+        />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+      <div>
+       
+        <input
+        className="input"
+          type="tel"
+          id="phoneNumber"
+          name="phoneNumber"
+          value={formData.phoneNumber}
+          onChange={handleChange}
+            placeholder="Enter your phoneNumber"
+  
+          required
+        />
+
+      </div>
+
+      
+
+      <div>
+       
+        <input
+        className="input"
+          type="email"
+          id="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+           placeholder="Enter your email address"
+        />
+      </div>
+      <div> 
+        <input className="input"
+          type="string"
+          id="motpass1"
+          name="motpass1"
+          value={formData.motpass1}
+          onChange={handleChange}
+             placeholder="Enter your moytpass"
+          required
+        />
+      </div>
+      <div>
+        
+        <input className="input"
+          type="string"
+          id="motpass2"
+          name="motpass2"
+          value={formData.motpass2}
+          onChange={handleChange}
+            placeholder="Enter your moytpass"
+          required
+        />
+      </div>
+    
+      <button  className="button" type="submit">Submit</button> &nbsp; &nbsp;&nbsp;
+      <button type="reset" className='reset' onClick={
+        ()=>{
+          setFormData({
+            firstName: '',
+            lastName: '',
+            phoneNumber: '',
+            email: '',
+            motpass1:'',
+            motpass2:'',
+          });
+
+        }
+      }> Annule</button>
+     
+    </form>
+   
+   </div >
   )
 }
 
