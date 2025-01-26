@@ -1,0 +1,9 @@
+version: '3'
+services:
+  node_app:
+    container_name: my_webBuy_container
+    build: .
+    environment:
+      NODE_ENV: development  # Fixed the syntax for environment variable
+    ports:
+      - "4000:4000"
