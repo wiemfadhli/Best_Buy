@@ -1,29 +1,57 @@
+html, body {
+  height: 100%;  /* Make sure the HTML and body take up the full height */
+  margin: 0;     /* Remove default margins */
+  font-family: Arial, sans-serif;
+}
+input:focus {
+  background-color: rgb(188, 40, 40);
+  color:  white;
+}
+
+.center-div {
+  background-color: rgb(215, 41, 67);
+  text-align: center;
+  width: 100%;
+  height: 100vh;  /* Use 100vh to ensure it covers the entire viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centers the form vertically and horizontally */
+}
+
+b {
+  color: rgb(215, 41, 67);
+}
+
+.form {
+  background-color: rgb(236, 227, 228);
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+}
+
 .input {
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  width: 40%;
+  width: 80%; 
 }
+
 .button {
-  padding: 10px 20px;
   background-color: rgb(40, 188, 97);
   color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-
+  width: 120px;
+  height: 30px;
 }
+
 .reset {
-  padding: 10px 20px;
   background-color: rgb(188, 40, 40);
   color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  width: 120px;
+  height: 30px;
 }
-.center-div {
-  padding: 100px 100px;
-  background-color: rgb(199, 201, 201);
-  text-align: center;  
+
+button[type="reset"] {
+  margin-left: 4%;
 }
