@@ -1,13 +1,10 @@
-import { useState } from 'react'
-import {Registration, Sigin_in }  from  './components/RegistrationForm/Registration';
-import { Store } from './components/Store/Store';
-
-
-
-
+import { useState } from 'react';
+import { Index } from './components';
 function App() {
   return (
-<> <Store></Store></>
+<>
+<Index></Index>
+</>
   )
 }
 

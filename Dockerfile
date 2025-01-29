@@ -4,10 +4,10 @@ FROM node:18-alpine AS build
 # Set working directory
 WORKDIR /app
 # Copy the package.json and package-lock.json (if present)
-COPY my-app/package*.json ./
+COPY ./my-app/package*.json ./
 # Copy the rest of the application code
 RUN npm install
-COPY . .
+COPY ./my-app .
 # Build the React app
-EXPOSE 4000
+EXPOSE 5173
 CMD ["npm", "run", "dev"]

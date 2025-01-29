@@ -6,4 +6,4 @@ services:
     environment:
       NODE_ENV: development  # Fixed the syntax for environment variable
     ports:
-      - "4000:4000"
+      - "5173:5173"

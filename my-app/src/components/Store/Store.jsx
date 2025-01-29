@@ -1,41 +1,27 @@
 import React from 'react';
 
-export const Store =() =>
-{
 
-    const BlockStore=  function  Blockstore(props){
-        return (
-            <div   style={{
-                backgroundColor: "rgb(227, 217, 217)",
-                    width: "180px",
-                    height: "150px",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center", 
-                    justifyContent: "center", 
-                    borderRadius: "8px",
-                    padding: "10px",
-                    textAlign: "center",
-            }}> 
- <h3>{ props.type} </h3>
-<img src="/1.jpg"  style={{
-    width:"150px",
-    height: "100px",
+export const BlockStore = (props) => {
+  return (
+    <div  key={props.id} 
+      style={{
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        width: '400px',
+        height: '240px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+        transition: 'background-color 0.3s',
+        cursor: 'pointer',
+        backgroundImage: `url(${props.type})`,
+        margin: "0", // Ensure no extra spacing
+      }}
+    >
+    </div>
+  );
+};
 
-   }}/>
-       
-
-   
-             </div>
-        );
-
-
-    }
-return (
-    <>
-   <BlockStore type={30}> 
-   </BlockStore>
   
-   </>
-);
-}
