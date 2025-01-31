@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { Index } from './components';
+import { Appointment } from './appointment/appointment';
+
 function App() {
   return (
 <>
-<Index></Index>
+<Appointment />
 </>
   )
 }
